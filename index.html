@@ -12,16 +12,22 @@
 		<h2>Fijiwater Store</h2>
 	</header>
 	<nav class= "navbar">
-		<div> Shoping cart</div>
+		 <input type="checkbox" ng-model ="model" ng-click="changePrice()" /> Wholesale(25% Off)
 	</nav>
 	<section ng-repeat = "product in products">
-		<div>
+   		<img src= http:{{product.mainImage.ref}} alt="N/A" width="350" height="350"/>
+		<div class="productName">
 			{{product.name}}
 		</div>
-		<div>
-			${{product.defaultPriceInCents}}
+		<div class="productPrice" ng-show ="retail">
+			Price: ${{(product.defaultPriceInCents/100)| number: 2}}
 		</div>
-	</section>
+		<div class="productPriceDiscounted" ng-show ="wholesale">
+			Price: ${{(product.defaultPriceInCents/100. - product.defaultPriceInCents/100* discount)| number: 2}}
+		</div>
+		<button>Add to Cart</button>
+
+   	</section>
 
 </body>
 
@@ -30,6 +36,5 @@
 <!-- application js -->
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src= "controllers/fijiController.js"></script>
-
 
 </html>
