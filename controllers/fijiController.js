@@ -31,11 +31,20 @@
 
 			$scope.addToCart = function(product){
 				//alert(product.name)
-		 		$scope.cart.push(product);
+				if($scope.cart.indexOf(product)< 0){
+					$scope.cart.push(product);	
+					// $scope.count =1;
+				}else{
+					// $scope.count +=1;
+					alert("product already in cart");
+					}
 		 	   }
+
 		 	$scope.removeFromCart = function(item){
-				//alert(product.name)
-		 		$scope.cart.pull(item);
+				// alert("Sure, you want to remove this item?")
+				var index = $scope.cart.indexOf(item);
+				$scope.cart.splice(index, 1);
+
 		 	   }
 		 	
 
