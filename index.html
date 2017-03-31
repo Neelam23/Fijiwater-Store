@@ -12,9 +12,16 @@
 		<h2>Fijiwater Store</h2>
 	</header>
 	<nav class= "navbar">
+		<div> Shoping cart</div>
 	</nav>
-	<section>
-   	</section>
+	<section ng-repeat = "product in products">
+		<div>
+			{{product.name}}
+		</div>
+		<div>
+			${{product.defaultPriceInCents}}
+		</div>
+	</section>
 
 </body>
 
