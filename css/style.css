@@ -57,10 +57,15 @@ div.productPriceDiscounted{
   margin-top: 10px;
   margin-left: 140px;
 }
-   .shoppingcart{
+
+section.cart{
+  width: 800px;
+  height:500px;
+}
+div.shoppingcart{
    text-align: left;
-   margin-top: 
-   padding: 120px 0px 0px 100px;
+   margin: 10px;
+  /*÷padding: 0px 0px 0px 0px;*/
    width: 800px;
    /*background: #e0e0e0;*/
    height: 500px;

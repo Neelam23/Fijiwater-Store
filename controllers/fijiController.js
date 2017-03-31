@@ -4,6 +4,7 @@
 		   
 		   	var discountPercent =.25;
 		    $scope.cart = [];
+		    $scope.checkboxValue = false;
 
 
 		    $http({
@@ -12,8 +13,6 @@
 			 	}).then(function(response){
 					  	if (response.status == 200){	
 					  		//alert("200 ok")
-					  		$scope.wholesale = false;
-		  				    $scope.retail = true;
 		  				    $scope.discount = 1;
 			 				$scope.meta = response.data.products.meta;
 			 				$scope.products = response.data.products;
@@ -22,10 +21,10 @@
 						}
 
 					});
+			 	
 
-		     $scope.changePrice = function(){
-				$scope.wholesale = true;
-				$scope.retail = false;
+		     $scope.changePrice = function(checkboxValue){
+				checkboxValue = true;
 				$scope.discount = discountPercent;
 				};
 
@@ -33,6 +32,7 @@
 				//alert(product.name)
 				if($scope.cart.indexOf(product)< 0){
 					$scope.cart.push(product);	
+					alert("Added to the cart");
 					// $scope.count =1;
 				}else{
 					// $scope.count +=1;
