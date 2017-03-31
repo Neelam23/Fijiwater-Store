@@ -14,6 +14,12 @@ nav.navbar{
   text-align: right;
   background: #b0bec5;
 }
+  .navItem{
+    margin-left:15px;
+    padding: 8px;
+    text-decoration: none;
+    background: #fff;
+  }
 section {
    float: left;
    padding: 90px 30px 0px 20px;
@@ -47,6 +53,23 @@ div.productPriceDiscounted{
   text-align: center;
   color: #e53935;
 }
+  .cartbutton{
+  margin-top: 10px;
+  margin-left: 140px;
+}
+section.shoppingcart{
+   text-align: left;
+   margin-top: 
+   padding: 110px 0px 0px 100px;
+   width: 100%;
+   /*background: #b0bec5;*/
+   height: 500px;
+}
+table{
+  text-align: left;
+}
+
+
 
 
 

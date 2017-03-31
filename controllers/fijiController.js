@@ -2,6 +2,8 @@
 	angular.module("fijiapp")
 		   .controller("fijiController",['$scope','$http',function ($scope,$http){
 		   
+		   	var discountPercent =.25;
+		    $scope.cart = [];
 
 
 		    $http({
@@ -16,17 +18,29 @@
 			 				$scope.meta = response.data.products.meta;
 			 				$scope.products = response.data.products;
 						}else{
-							alert("404");
+							alert("error 404");
 						}
 
 					});
 
-		     $scope.changePrice = function (){
+		     $scope.changePrice = function(){
 				$scope.wholesale = true;
 				$scope.retail = false;
-				$scope.discount = .25;
-				}
+				$scope.discount = discountPercent;
+				};
 
+			$scope.addToCart = function(product){
+				//alert(product.name)
+		 		$scope.cart.push(product);
+		 	   }
+		 	$scope.removeFromCart = function(item){
+				//alert(product.name)
+		 		$scope.cart.pull(item);
+		 	   }
+		 	
+
+			 
+			   
 
 			}]);
 })();
